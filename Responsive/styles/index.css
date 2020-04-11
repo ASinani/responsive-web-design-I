@@ -1,0 +1,128 @@
+/********* RESET *********/
+
+*{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    max-width:100%; /* never be bigger than your parent - stops the dreaded horizontal scroll bar */
+    /* border:1px solid grey; */
+
+}
+/* Brit uses rem for font, % for everything else and vh occasionally to set the height of a header */
+/********* GENERAL STYLES *********/
+html {
+    font-size: 62.5%;  /* the browers has a default font-size of 16 px you are setting it to 62.5% of that which means that 1 rem = 10px*/
+}
+body {
+    line-height:2;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.6rem;
+}
+h1, h2,h3,h4,h5,h6 {
+    font-family: 'Inconsolata', monospace;
+    letter-spaced:3px;
+}
+section {
+    padding: 4% 0;
+}
+
+/********* HEADER STYLES *********/
+header {
+    height:60vh;
+}
+nav {
+    display:flex;
+    justify-content:space-between;
+}
+.logo {
+    width:10%;
+
+}
+.links {
+    width:30%;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.titleParent{
+    height:50vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+/********* About SECTION STYLES *********/
+#about h2 {
+    text-align: center;
+}
+.parent{
+    display:flex;
+    justify-content: space-around;
+}
+
+.parent div {
+    width:25%;
+}
+
+
+/********* Footer STYLES *********/
+#contact {
+    display:flex;
+
+}
+.left{
+    width:40%;
+    display: flex;
+    justify-content: center;
+}
+.left img{
+    width: 50%;
+}
+.right{
+    width:60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right div{
+    width:50%;
+    text-align: center;
+}
+
+/******* Media Queries ********/
+
+
+/* min width scales up and max width scales down - if we are writing a mobile first website we will be using min width to scale up / if we are writing desktop first then we use max-width to scale down*/
+
+@media (max-width: 800px){
+    .parent{
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+    .parent div{
+        width:80%
+    }
+}
+
+/* Phone */
+@media (max-width: 500px){
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+    .links{
+        width:100%;
+    }
+    #contact{
+        flex-direction:column;
+    }
+    .left, .right{
+        width: 100%;
+    }
+    .right div{
+        width:80%;
+    }
+    .left img{
+        width: 80%;
+    }
+}
